@@ -39,21 +39,21 @@ class User extends Authenticatable
 
     public function items()
     {
-        return $this->hasMany(Item::class);
+        return $this->hasMany('App\Item');
     }
 
     public function faivorites()
     {
-        return $this->hasMany(Favorite::class);
+        return $this->hasMany('App\Favorite');
     }
 
     public function followers()
     {
-        return $this->belongsToMany(self::class, 'follows', 'follow_id', 'user_id');
+        return $this->belongsToMany('App\User', 'follows', 'follow_id', 'user_id');
     }
 
     public function follows()
     {
-        return $this->belongsToMany(self::class, 'follows', 'user_id', 'follow_id');
+        return $this->belongsToMany('App\User', 'follows', 'user_id', 'follow_id');
     }
 }

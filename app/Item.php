@@ -12,21 +12,21 @@ class Item extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\User');
     }
 
     public function posts()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany('App\Post');
     }
 
     public function favorites()
     {
-        return $this->hasMany(Favorite::class);
+        return $this->hasMany('App\Favorite');
     }
 
     public function materials()
     {
-        return $this->belongsToMany(Material::class);
+        return $this->belongsToMany('App\Material');
     }
 }
