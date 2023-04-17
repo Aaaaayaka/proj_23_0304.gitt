@@ -8,26 +8,26 @@ class Item extends Model
 {
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\User');
     }
 
     public function notifications()
     {
-        return $this->hasMany('App\Models\Notification');
+        return $this->hasMany('App\Notification');
     }
 
     public function posts()
     {
-        return $this->hasMany('App\Models\Post');
+        return $this->hasMany('App\Post');
     }
 
     public function favorites()
     {
-        return $this->hasMany('App\Models\Favorite');
+        return $this->hasMany('App\Favorite');
     }
 
     public function materials()
     {
-        return $this->hasMany('App\Models\Material');
+        return $this->hasMany('App\Material');
     }
 }

@@ -8,11 +8,11 @@ class Material extends Model
 {
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\User');
     }
 
-    public function Item()
+    public function item()
     {
-        return $this->belongsTo('App\Models\Item');
+        return $this->belongsTo('App\Item');
     }
 }
