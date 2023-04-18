@@ -10,13 +10,16 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    // $fillable: レコード編集を許可してよいカラム(ホワイトリスト)
+    // $guarded: レコード編集を許可しないカラム(ブラックリスト)
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'bio', 'image',
     ];
 
     /**
@@ -24,6 +27,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // JSONに含まれなくなる
     protected $hidden = [
         'password', 'remember_token',
     ];
